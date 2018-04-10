@@ -17,7 +17,6 @@ build:
   noarch: python
   number: 1
   script:
-    - touch bin/__init__.py
     - python -m pip install --no-deps --ignore-installed .
   entry_points:
     - igorbinarywave = bin.igorbinarywave:main
@@ -37,7 +36,7 @@ test:
     - igor.binarywave
     - igor.packed
     - igor.igorpy
-    - igor.bin
+    - bin
   commands:
     - igorbinarywave --help
     - igorpackedexperiment --help
