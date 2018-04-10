@@ -1,0 +1,51 @@
+diff --git a/bin/igorbinarywave.py b/bin/igorbinarywave.py
+index 70c1bc3..0615bbf 100755
+--- a/bin/igorbinarywave.py
++++ b/bin/igorbinarywave.py
+@@ -38,5 +38,6 @@ class WaveScript (Script):
+             pprint.pprint(wave)
+ 
+ 
+-s = WaveScript(description=__doc__)
+-s.run()
++def main():
++    s = WaveScript(description=__doc__)
++    s.run()
+diff --git a/bin/igorpackedexperiment.py b/bin/igorpackedexperiment.py
+index 0a08444..cc5b9f9 100755
+--- a/bin/igorpackedexperiment.py
++++ b/bin/igorpackedexperiment.py
+@@ -47,8 +47,7 @@ class PackedScript (Script):
+     def _plot_wave_callback(self, dirpath, key, value):
+         if isinstance(value, WaveRecord):
+             self.plot_wave(self.args, value.wave, title=dirpath + [key])
+-
+-
+-s = PackedScript(
+-    description=__doc__, filetype='IGOR Packed Experiment (.pxp) file')
+-s.run()
++def main():
++    s = PackedScript(description=__doc__,
++                     filetype='IGOR Packed Experiment (.pxp) file')
++    s.run()
+diff --git a/setup.py b/setup.py
+index 2c9ff77..2b37221 100644
+--- a/setup.py
++++ b/setup.py
+@@ -56,10 +56,13 @@ setup(name=package_name,
+       packages=[
+         'igor',
+         'igor.record',
++        'igor.bin',
+         ],
+-      scripts=[
+-        'bin/igorbinarywave.py',
+-        'bin/igorpackedexperiment.py',
++      entry_points={
++        'console_scripts': [
++            'igorbinarywave = bin.igorbinarywave:main',
++            'igorpackedexperiment = bin.igorpackedexperiment:main'
+         ],
++        },
+       provides=['igor ({})'.format(__version__)],
+       )
