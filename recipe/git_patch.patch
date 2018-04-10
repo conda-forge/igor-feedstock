@@ -29,12 +29,14 @@ index 0a08444..cc5b9f9 100755
 +                     filetype='IGOR Packed Experiment (.pxp) file')
 +    s.run()
 diff --git a/setup.py b/setup.py
-index 2c9ff77..03bad17 100644
+index 2c9ff77..2b37221 100644
 --- a/setup.py
 +++ b/setup.py
-@@ -57,9 +57,11 @@ setup(name=package_name,
+@@ -56,10 +56,13 @@ setup(name=package_name,
+       packages=[
          'igor',
          'igor.record',
++        'igor.bin',
          ],
 -      scripts=[
 -        'bin/igorbinarywave.py',

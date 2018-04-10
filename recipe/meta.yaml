@@ -16,7 +16,7 @@ source:
 build:
   noarch: python
   number: 1
-  script: 
+  script:
     - touch $SRC_DIR/bin/__init__.py
     - python -m pip install --no-deps --ignore-installed .
   entry_points:
@@ -37,6 +37,7 @@ test:
     - igor.binarywave
     - igor.packed
     - igor.igorpy
+    - igor.bin
   commands:
     - igorbinarywave --help
     - igorpackedexperiment --help
