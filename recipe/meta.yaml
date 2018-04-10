@@ -18,7 +18,7 @@ build:
   noarch: python
   number: 1
   script: 
-    - touch bin/__init__.py
+    - touch $SRC_DIR/bin/__init__.py
     - python -m pip install --no-deps --ignore-installed .
   entry_points:
     - igorbinarywave = bin.igorbinarywave:main
