@@ -16,7 +16,9 @@ Python parsers for Igor Binary Waves (.ibw) and Packed Experiment
 Current build status
 ====================
 
-All platforms: [![Circle CI](https://circleci.com/gh/conda-forge/igor-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/igor-feedstock)
+Linux: [![Circle CI](https://circleci.com/gh/conda-forge/igor-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/igor-feedstock)
+OSX: [![TravisCI](https://travis-ci.org/conda-forge/igor-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/igor-feedstock)
+Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/igor-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/igor-feedstock/branch/master)
 
 Current release info
 ====================

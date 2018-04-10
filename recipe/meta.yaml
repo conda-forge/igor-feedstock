@@ -12,8 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  noarch: python
-  number: 0
+  number: 1
   script: python -m pip install --no-deps --ignore-installed .
 
 requirements:
@@ -26,16 +25,13 @@ requirements:
     - matplotlib
 
 test:
-  source_files:
-    - bin/igorbinarywave.py
-    - bin/igorpackedexperiment.py
   imports:
     - igor.binarywave
     - igor.packed
     - igor.igorpy
   commands:
-    - python bin/igorbinarywave.py  --help
-    - python bin/igorpackedexperiment.py --help
+    - igorbinarywave --help
+    - igorpackedexperiment --help
 
 about:
   home: http://blog.tremily.us/posts/igor/
