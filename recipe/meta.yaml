@@ -23,7 +23,7 @@ build:
     - igorpackedexperiment = bin.igorpackedexperiment:main
 
 requirements:
-  build:
+  host:
     - python
     - pip
   run:
