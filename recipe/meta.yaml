@@ -1,23 +1,21 @@
 {% set name = "igor" %}
 {% set version = "0.3" %}
-{% set sha256 = "b04ac38c68fb81cf3167a9981dc5a20379112d40268bb72c5a8514dc8051abba" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  sha256: b04ac38c68fb81cf3167a9981dc5a20379112d40268bb72c5a8514dc8051abba
   patches:
     - git_patch.patch
 
 build:
   noarch: python
-  number: 2
+  number: 3
   script:
-    - "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+    - "{{ PYTHON }} -m pip install . -vv"
   entry_points:
     - igorbinarywave = bin.igorbinarywave:main
     - igorpackedexperiment = bin.igorpackedexperiment:main
@@ -29,7 +27,7 @@ requirements:
   run:
     - python
     - numpy
-    - matplotlib
+    - matplotlib-base
 
 test:
   imports:
